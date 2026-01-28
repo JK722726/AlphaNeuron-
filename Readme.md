@@ -11,4 +11,4 @@ Vishal sir ka chela , pravin ko jakar pela
 Aabra ka daabra land ka sagara
 aand mand ka tola pravin bhen ka loloa 
 Aabra ka daabra land ka sagara 
-ekach wagh kala ghag 
+ekach wagh kalu ghag
