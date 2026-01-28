@@ -6,3 +6,4 @@ Sagar Ahirrao
 Parth Kalne 
 Jayesh Deore 
 pravin sabse badi randi hai 
+Ajit pawar maar gya 
