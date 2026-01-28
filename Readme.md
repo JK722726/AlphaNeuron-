@@ -7,4 +7,5 @@ Parth Kalne
 Jayesh Deore 
 pravin sabse badi randi hai 
 Vishal sir ka chela , pravin ko jakar pela 
-Aabra ka daabra land ka sagara 
+Aabra ka daabra land ka sagara
+aand mand ka tola pravin bhen ka loloa 
