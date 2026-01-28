@@ -1,8 +1,8 @@
 This is a practice project for our team Alpha Neuron
 Team Members 
 Jainil Kothari 
-Kush asli gandu
-Sagar ki jhat ko diya kaat
+Kush Agarwal
+Sagar Ahirrao
 Parth Kalne 
 Jayesh Deore 
 pravin sabse badi randi hai 
