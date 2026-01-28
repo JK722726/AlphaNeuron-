@@ -1,6 +1,6 @@
 import os
 import requests
-from openai import OpenAI
+import utils
 
 def log_tool_usage(tool_name: str):
     print(f"[TOOL] Executing: {tool_name}")
@@ -40,33 +40,22 @@ def search_web(query: str):
 
 def summarize_content(content: str):
     """
-    Summarizes content using OpenAI.
+    Summarizes content using Gemini with key rotation.
     Returns: {"status": "success"|"error", "output": str}
     """
     log_tool_usage("summarize_content")
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-         return {"status": "error", "output": "OPENAI_API_KEY not found."}
-
-    client = OpenAI(api_key=api_key, timeout=20.0)
     
-    # Cap input length to avoid context limits
+    # Cap input length
     max_len = 10000
     if len(content) > max_len:
         content = content[:max_len] + "...(truncated)"
     
-    model = os.environ.get("OPENAI_MODEL", "gpt-4")
+    model_name = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
     
     try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "Summarize the following content concisely."},
-                {"role": "user", "content": content}
-            ],
-            temperature=0
-        )
-        return {"status": "success", "output": response.choices[0].message.content.strip()}
+        prompt = f"Summarize the following content concisely:\n\n{content}"
+        output = utils.generate_content_with_retry(model_name, prompt)
+        return {"status": "success", "output": output.strip()}
     except Exception as e:
         return {"status": "error", "output": f"Summarization failed: {str(e)}"}
 
